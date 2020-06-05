@@ -12,16 +12,20 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class BaseDriver {
 	public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
-		File f = new File("src");
-		File fs = new File(f,"ApiDemos-debug.apk");
 		
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "testPixel");
-		cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
-		cap.setCapability(MobileCapabilityType.APP, fs.getAbsolutePath());
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "testPixel");
+		
+		// Invoke Chrome Browser
+		cap.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
+		// cap.setCapability(MobileCapabilityType.NO_RESET, true);
+		// If noReset is set to TRUE, the app data will NOT be cleared before this session starts.
+		// If fullReset is set to true, the app will get uninstalled and all data will be cleared.
+		cap.setCapability("chromedriverExecutable", "/Users/qatest/node_modules/appium/node_modules/appium-chromedriver/chromedriver/mac/chromedriver");
 		
 		AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+		
+		
 		
 		return driver;
 	}
