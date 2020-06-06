@@ -19,3 +19,7 @@ https://www.npmjs.com/package/chromedriver
 cap.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
 
 cap.setCapability("chromedriverExecutable", "/Users/45678/node_modules/chromedriver/bin/chromedriver");
+
+<br>
+<b>Chrome Abruptly close and open solution:</b> <br>
+Download the chrome driver with version that is mentioned in error.
