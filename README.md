@@ -16,3 +16,5 @@
    		<li>Data Provider annotation </li>
    		<li>Listeners Interface </li>
    </ol>
+   
+Converting to testNG class to xml helps to invoke multiple cases on single click.
