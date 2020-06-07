@@ -12,8 +12,8 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class BaseDriver {
 	public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
-		File f = new File("src");
-		File fs = new File(f,"ApiDemos-debug.apk");
+		File appDir = new File("src");
+		File fs = new File(appDir,"General-Store.apk");
 		
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "testPixel");
