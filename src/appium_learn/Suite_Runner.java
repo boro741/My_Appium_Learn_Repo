@@ -11,7 +11,7 @@ public class Suite_Runner{
 		
 		EcommerceTestCases ecTestCases = new EcommerceTestCases();
 		
-		ecTestCases.fillBasicForm();
+		ecTestCases.testToastErrorMsg();
 		
 	}
 
