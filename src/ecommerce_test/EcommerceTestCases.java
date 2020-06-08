@@ -40,4 +40,20 @@ public class EcommerceTestCases extends BaseDriver{
 		// and name is the attribute where we assign the text to toast.
 		Assert.assertEquals("Please enter your name", toastMsg);
 	}
+	
+	public void scrollToProduct() {
+		this.fillBasicForm();
+		 driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().resourceId(\"com.androidsample.generalstore:id/rvProductList\")).scrollIntoView(new UiSelector().textMatches(\"Jordan 6 Rings\").instance(0))");
+		 
+		 int count = driver.findElements(By.id("com.androidsample.generalstore:id/productName")).size();
+		 
+		 for(int i=0;i<count;i++){
+		    String text=driver.findElements(By.id("com.androidsample.generalstore:id/productName")).get(i).getText();
+		    if(text.equalsIgnoreCase("Jordan 6 Rings")){
+		    	driver.findElements(By.xpath("//android.widget.TextView[contains(@text, 'ADD TO CART')]")).get(i).click();
+		    	break;
+		    }
+		 }
+		 driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
+	}
 }
