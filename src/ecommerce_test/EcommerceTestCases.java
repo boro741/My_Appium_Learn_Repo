@@ -56,4 +56,6 @@ public class EcommerceTestCases extends BaseDriver{
 		 }
 		 driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
 	}
+	
+	
 }
